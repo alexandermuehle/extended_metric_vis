@@ -19,7 +19,7 @@ function ExtendedMetricVisProvider(Private) {
         title: 'Extended Metric',
         icon: 'fa-calculator',
         description: 'Based on the core Metric-Plugin but gives you the ability to output custom aggregates on metric-results.',
-        category: CATEGORY.OTHER,
+        category: CATEGORY.DATA,
         visConfig: {
             defaults: {
                 handleNoResults: true,
@@ -28,7 +28,8 @@ function ExtendedMetricVisProvider(Private) {
                     {
                         formula: 'metrics[0].value * metrics[0].value',
                         label: 'Count squared',
-                        enabled: true
+                        enabled: true,
+                        percentageMode: false
                     }
                 ]
             },
