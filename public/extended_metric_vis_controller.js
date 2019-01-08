@@ -14,12 +14,24 @@ module.controller('KbnExtendedMetricVisController', function ($scope, Private) {
 
   function updateOutputs() {
     $scope.vis.params.outputs.forEach(function (output) {
+
+      let getPercetage = function(value, precision) {
+          if (precision === 0) {
+            return Math.round(value * 100);
+          }
+
+          if (precision > 0)  {
+              const tbm = [1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000, 100000000000, 1000000000000];
+              return Math.round(value * tbm[precision-1])/(tbm[precision-1]/100);
+          }
+      };
+
       try {
         const func = Function("metrics", "return " + output.formula);
         const isPercentageMode = output.percentageMode;
         let value = func(metrics) || "?";
         if (isPercentageMode) {
-          const percentage = Math.round(value * 100);
+          const percentage = getPercetage(value, output.precision);
           value = `${percentage}%`;
         }
         output.value = value;
@@ -74,7 +86,8 @@ module.controller('ExtendedMetricEditorController', function ($scope) {
       formula: 'metrics[0].value * metrics[0].value',
       label: 'Count squared',
       enabled: true,
-      percentageMode: false
+      percentageMode: false,
+      precision: 0
     });
   };
 

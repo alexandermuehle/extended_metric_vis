@@ -29,7 +29,8 @@ function ExtendedMetricVisProvider(Private) {
                         formula: 'metrics[0].value * metrics[0].value',
                         label: 'Count squared',
                         enabled: true,
-                        percentageMode: false
+                        percentageMode: false,
+                        precision: 0
                     }
                 ]
             },
