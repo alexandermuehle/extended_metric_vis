@@ -66,6 +66,14 @@
                         <input class="kuiCheckBox" id="percentageMode" type="checkbox" ng-model="output.percentageMode">
                     </div>
                 </div>
+                <div class="kuiSideBarFormRow">
+                    <label class="kuiSideBarFormRow__label" for="precision">
+                        Precision
+                    </label>
+                    <div class="kuiSideBarFormRow__control">
+                        <input id="precision" min="0" max="10" type="number" ng-model="output.precision">
+                    </div>
+                </div>
                 <div class="form-group">
                   <label>Formula</label>
                   <input type="text" ng-model="output.formula" class="form-control" />
