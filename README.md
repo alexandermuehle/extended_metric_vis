@@ -11,7 +11,7 @@ Based on this deposit (https://github.com/ommsolutions/kibana_ext_metrics_vis)
 **6.2.2**
 
 ```sh
-$ ./bin/kibana-plugin install https://github.com/Nohame/extended_metric_vis/releases/download/6.2.2/kibana_ext_metrics_vis-6.2.2.zip
+$ ./bin/kibana-plugin install https://github.com/Nohame/extended_metric_vis/releases/download/6.2.2.1/kibana_ext_metrics_vis-6.2.2.zip
 ```
 
 ### Manual
