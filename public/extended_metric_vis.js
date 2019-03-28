@@ -5,7 +5,6 @@ import {VisSchemasProvider} from 'ui/vis/editors/default/schemas';
 import extendedMetricVisTemplate from 'plugins/extended_metric_vis/extended_metric_vis.html';
 import metricVisParamsTemplate from 'plugins/extended_metric_vis/extended_metric_vis_params.html';
 import {VisTypesRegistryProvider} from 'ui/registry/vis_types';
-import {CATEGORY} from 'ui/vis/vis_category';
 
 // register the provider with the visTypes registry
 VisTypesRegistryProvider.register(ExtendedMetricVisProvider);
@@ -19,7 +18,6 @@ function ExtendedMetricVisProvider(Private) {
         title: 'Extended Metric',
         icon: 'fa-calculator',
         description: 'Based on the core Metric-Plugin but gives you the ability to output custom aggregates on metric-results.',
-        category: CATEGORY.DATA,
         visConfig: {
             defaults: {
                 handleNoResults: true,
